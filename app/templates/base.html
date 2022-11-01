@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="bg">
+  <head>
+    <title>{% block title %}{% endblock %} - Myapp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  </head>
+  <body class="max-w-lg mx-auto rounded-md">
+    <nav class="rounded-t-md ">
+      <h1 class="m-0 ml-1">Outlook</h1>
+      <ul class="m-0">
+        {% if g.user %}
+          <li><span style="color: aliceblue;">{{ g.user['username'] }}</span>
+          <li><a style="color: aliceblue;" href="{{ url_for('auth.logout') }}">CERRAR SESION</a>
+        {% else %}
+          <li><a style="color: aliceblue;" href="{{ url_for('auth.register') }}">Registro</a>
+          <li><a style="color: aliceblue;" href="{{ url_for('auth.login') }}">Login</a>
+          <li><a style="color: aliceblue;" href="{{ url_for('auth.forgot') }}">Olvidaste tu contraseña?</a>
+            
+        {% endif %}
+      </ul>
+    </nav>
+    <section class="content">
+      <header class="mb-2 flex justify-between">
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash rounded-md bg-indigo-300 border-indigo-600 text-indigo-800">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+  </body>
+</html>

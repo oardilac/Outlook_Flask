@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2 style="color: aliceblue;" class="text-slate-700 my-2">{% block title %}Registarse{% endblock %}</h2>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="{{ url_for('auth.register')}}" class="px-4">
+    <label for="username">Nombre de Usuario</label>
+    <input type="text" name="username" id="username" class="rounded-md mb-2" required>
+    <label for="email address">Email </label>
+    <input type="email" name="email" id="email" class="rounded-md mb-2" required>
+    <label for="password">Contraseña</label>
+    <input type="password" name="password" id="password" class="rounded-md mb-6" required>
+    <input type="submit" value="REGISTAR" style="background-color: rgb(5, 52, 182)" class="w-full text-white rounded-md py-2 cursor-pointer">
+  </form>
+{% endblock %}

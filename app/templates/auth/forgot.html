@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2 style="color: aliceblue;" class="text-slate-700 my-2">{% block title %}Olvidaste tu contraseña!{% endblock %}</h2>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="{{ url_for('auth.forgot')}}" class="px-4">
+    <label for="email">Escriba su dirección de correo electrónico</label>
+    <input type="email" name="email" id="email" class="rounded-md mb-6" required>
+    <input type="submit" value="CAMBIAR" style="background-color:  rgb(5, 52, 182);" class="w-full  text-white rounded-md py-2 cursor-pointer">
+  </form>
+{% endblock %}

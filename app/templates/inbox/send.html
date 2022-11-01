@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2 style="color: aliceblue;" class="text-slate-700 my-2">{% block title %}ENVIAR NUEVO MESAJE{% endblock %}</h2>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="{{url_for('inbox.send')}}" class="px-4">
+    <label for="to">Destinatario</label>
+    <input type="text" name="to" id="to" class="rounded-md mb-2" required>
+    <label for="subject">ASUNTO</label>
+    <input type="text" name="subject" id="subject" class="rounded-md mb-2" required>
+    <label for="body">MENSAJE</label>
+    <textarea name="body" id="body" rows="3" class="rounded-md mb-6" required ></textarea>
+    <input type="submit" value="ENVIAR" style="background-color:  rgb(5, 52, 182);" class="w-full  text-white rounded-md py-2 cursor-pointer">
+  </form>
+{% endblock %}
