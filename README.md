@@ -1,31 +1,7 @@
-http://odardila.pythonanywhere.com/
-# Demo Flask
-This project uses Python 3.6.
-
-## Dependencies
-To install the required dependencies, please follow these steps:
-
-1. Open a console.
-2. Go to the project directory (with `cd` command).
-3. Write and execute `pip3 install -r requirements.txt`.
-
-## Initializate DB
-To run the app, you need to provide a Microsoft account for the app to send/receive emails. To add this account follow these steps:
-
-1. Open the file `schema.sql`.
-2. Locate the line `INSERT INTO credentials (name,user,password) VALUES ('EMAIL_APP','developmentcapstone', '$TR41NC0URS3R4$')`.
-3. Replace `developmentcapstone` with the email address.
-4. Replace `$TR41NC0URS3R4$` with a password to access the email account.
-5. Run `flask init-db` on the project directory.
-
-## Run application
-For run the app you need to use `flask run` on the project directory.
-
-# Hangman_game
-> Python Hangman
-> 
-![image](https://user-images.githubusercontent.com/70169625/198852457-7bbb37cc-72af-41f3-9aa9-cec1e939b5be.png)
-
+# Electronic Messaging Platform
+> This project uses Python 3.6
+> ![image](https://user-images.githubusercontent.com/70169625/199143248-c09ab16c-f1e6-4828-83dd-803e99774ebd.png)
+> You can also access to the project in the cloud. This is the [code](http://odardila.pythonanywhere.com/)
 
 ## Table Of Contents:
  - [Description](#description)
@@ -33,7 +9,28 @@ For run the app you need to use `flask run` on the project directory.
  - [Contributing](#contributing)
 
 ## Description
-It is the typical hangman game made in python 3, which allows you to guess the word, and can be used in different ways, such as entertainment, educational, etc...
+In order to access the platform, the user must register by providing the following data:
+- User name.
+- E-mail address.
+- Password.
+Upon registration, a link to activate the account must be sent to the e-mail address entered.
+
+Once the access user to the platform has been created, the end user will have the possibility of:
+- Activate their account using the link sent to the email entered during registration.
+- Login to the platform using the credentials with which he/she registered. The user will only be able to log in once his account has been activated.
+- Request the recovery of your password. To do so, you must enter the e-mail address with which you registered and you will be sent a link to recover your password.
+- Change your password by entering the password recovery link sent by mail. In this link you must enter and confirm your new password, and if they are the same, the password will be updated.
+
+After logging into the platform, the user will be able to:
+- Send messages to other users. To do this, it is necessary to enter the user to whom the message will be sent (this user must exist), a subject and the body of the message.
+- Read messages received from other users. The display of these must show the subject, the user who sent it, the date it was sent and the body of the message.
+
+And for the development of the project:
+- Outlook SMTP will be used to send account activation and password recovery emails. For this, it is necessary to use your Uninorte account.
+- The database must be relational.
+- User passwords must be stored securely.
+- The connection to the server must be secure.
+- A CSS library must be used to handle the styles of your application.
 
 ## Installation
 1. Clone or download de repository:
@@ -48,9 +45,14 @@ It is the typical hangman game made in python 3, which allows you to guess the w
     $ source venv/Scripts/activate
     ```
 
-3. Run the program
+3. Install the framework that the program needed
     ```
-    $ py hangman.py
+    $ pip install -r requirements.txt
+    ```
+
+4. Run the program
+    ```
+    $ flask run
     ```
 
 ## Contributing
