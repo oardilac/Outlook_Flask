@@ -38,7 +38,7 @@ And for the development of the project:
 1. Clone or download de repository:
     ```
     $ git init
-    $ git clone https://github.com/oardilac/Hangman_game.git
+    $ git clone https://github.com/oardilac/Outlook_Flask.git
     ```
 
 2. Open the console inside the project directory and create a virtual environment.
