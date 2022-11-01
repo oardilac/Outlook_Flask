@@ -3,7 +3,7 @@
 > 
 ![image](https://user-images.githubusercontent.com/70169625/199143248-c09ab16c-f1e6-4828-83dd-803e99774ebd.png)
 > 
-> You can also access to the project in the cloud. This is the [code](http://odardila.pythonanywhere.com/)
+> You can also access to the project in the cloud. This is the [page](http://odardila.pythonanywhere.com/)
 
 ## Table Of Contents:
  - [Description](#description)
